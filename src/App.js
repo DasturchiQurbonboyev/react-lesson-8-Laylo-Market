@@ -9,18 +9,23 @@ import Login from './components/login/Login';
 import Products from './components/hero/products/Products';
 import StatCard from './components/stat-card/StatCard';
 import FaetureCard from './components/faeture-card/FaetureCard';
+import Single from './components/single/Single';
+import Admin from './components/admin/Admin';
+import Auth from './components/auth/Auth';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/' element={<Hero />} />
-        <Route path='/login' element={<Login />}>
-          {/* <Route path='/products' element={<Products />} /> */}
-        </Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Auth />} >
+          <Route path='/admin' element={<Admin />} />
+        </Route >
         <Route path='/startcard' element={<StatCard />} />
         <Route path='/faeturecard' element={<FaetureCard />} />
+        <Route path='/single' element={<Single />} />
       </Routes>
       <Footer />
     </div>

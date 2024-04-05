@@ -1,0 +1,143 @@
+.kontainer {
+    max-width: 1200;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.admin__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.admin__top__left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin__top__left h1 {
+    font-family: Manrope;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: 0.47999998927116394px;
+    text-align: left;
+}
+
+.admin__top__left p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24.5px;
+    letter-spacing: 0.47999998927116394px;
+    text-align: left;
+    color: #7A7A7A;
+}
+
+
+.admin__top__reight img {
+    width: 100%;
+}
+
+
+
+.admin__top__left__box {
+    padding: 25px 13px;
+    background: #E9E9E9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin__top__left__box__card h2 {
+    font-family: Manrope;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    color: #F53E32;
+}
+
+.admin__top__left__box__card h2 span {
+    font-family: Manrope;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: #7A7A7A;
+    margin-left: -15px;
+}
+
+.admin__top__left__box__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.admin__bottom {
+    /* margin-top: 100px; */
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.admin__bottom__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #E9E9E9;
+    padding: 80px 25px 25px;
+}
+
+.admin__bottom__card h5 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30.01px;
+    letter-spacing: 0.47999998927116394px;
+    text-align: center;
+}
+
+.admin__bottom__card p {
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0.47999998927116394px;
+    text-align: center;
+    color: #7A7A7A;
+}
