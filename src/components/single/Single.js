@@ -4,25 +4,28 @@ import { API_URL } from '../../static/index';
 import axios from 'axios';
 import Products from '../hero/products/Products';
 
+import Loading from '../loading/Loading';
+
 
 function Single() {
 
     const [like, setLike] = useState(false)
+    console.log("");
 
 
     const [product, setProduct] = useState(null)
     const { id } = useParams();
 
-    // const [loading, setLoading] = useState(false)
-    // console.log(API_URL);
+    const [loading, setLoading] = useState(false)
+    console.log(API_URL);
 
     useEffect(() => {
-        // setLoading(true)
+        setLoading(true)
         axios
             .get(`${API_URL}/${id}`)
             .then(res => setProduct(res.data))
             .catch(err => console.log(err))
-        // .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
     }, [])
 
 
@@ -33,11 +36,11 @@ function Single() {
         }
     }, []);
 
-    // console.log(product);
+    console.log(product);
 
-    // if (loading) {
-    //     return <h2>Loading.....</h2>
-    // }
+    if (loading) {
+        return <Loading />
+    }
 
     const handleLike = () => {
         const newLikeState = !like;
@@ -51,7 +54,7 @@ function Single() {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                            <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
+                            <h2 className="text-sm title-font text-gray-500 tracking-widest">{product?.category}</h2>
                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product?.title}</h1>
                             <div className="flex mb-4">
                                 <a className="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Description</a>

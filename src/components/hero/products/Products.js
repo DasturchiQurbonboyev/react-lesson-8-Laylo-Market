@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../../../static/index';
+import Loading from '../../loading/Loading';
+import Confetti from 'react-confetti';
 
 
 function Products() {
@@ -14,6 +16,7 @@ function Products() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [categorys, setCategorys] = useState([])
     const [categorieValue, setCategorieValue] = useState("")
+    const [confeti, setConfeti] = useState(true)
 
     useEffect(() => {
         axios
@@ -40,6 +43,20 @@ function Products() {
             .catch(err => console.log(err))
             .finally(() => setLoading(true))
     }, [count, categorieValue])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setConfeti(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        // return <Loading className="" />
+    }
+
+
 
 
     // let categorieItems = categorys?.map((el, inx) => <li key={inx} onClick={() => setCategorieValue(el)}>{el}</li>)
@@ -82,6 +99,8 @@ function Products() {
 
     return (
         <>
+            {confeti && <Confetti gravity={1} />}
+
             <div className="flex flex-col text-center w-full mb-20">
                 <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">PRODUCTS</h2>
                 <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">MOST POPULAR PRODUCTS</h1>
