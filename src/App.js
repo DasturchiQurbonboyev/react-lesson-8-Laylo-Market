@@ -25,7 +25,7 @@ function App() {
         </Route >
         <Route path='/startcard' element={<StatCard />} />
         <Route path='/faeturecard' element={<FaetureCard />} />
-        <Route path='/single' element={<Single />} />
+        <Route path='/product/:id' element={<Single />} />
       </Routes>
       <Footer />
     </div>
